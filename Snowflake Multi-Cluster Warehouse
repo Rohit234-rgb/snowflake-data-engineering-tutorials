@@ -1,0 +1,38 @@
+# Snowflake Multi-Cluster Warehouse
+
+## 🎥 Watch the Video
+
+[Watch my YouTube Short](PASTE_YOUR_YOUTUBE_SHORT_LINK_HERE)
+
+## 📌 What is a Multi-Cluster Warehouse?
+
+A multi-cluster warehouse allows Snowflake to start additional compute clusters when workload concurrency increases.
+
+For example, imagine a supermarket with multiple checkout counters. When more customers arrive, additional counters can open to reduce waiting time.
+
+## 💻 Example SQL
+
+```sql
+CREATE WAREHOUSE MY_WH
+WITH
+    WAREHOUSE_SIZE = 'XSMALL'
+    MIN_CLUSTER_COUNT = 1
+    MAX_CLUSTER_COUNT = 3
+    SCALING_POLICY = 'STANDARD'
+    AUTO_SUSPEND = 60
+    AUTO_RESUME = TRUE;
+```
+
+## 🔑 Key Points
+
+- MIN_CLUSTER_COUNT defines the minimum number of clusters.
+- MAX_CLUSTER_COUNT defines the maximum number of clusters.
+- SCALING_POLICY controls how Snowflake adds clusters.
+- Multi-cluster warehouses primarily help with concurrency.
+
+## 📚 Related Topics
+
+- Snowflake Virtual Warehouses
+- Auto-scaling
+- Query Performance
+- Warehouse Cost Optimization
